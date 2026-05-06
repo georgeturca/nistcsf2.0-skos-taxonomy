@@ -91,7 +91,7 @@ def main():
             if match:
                 subcategory_id = match.group("id").strip() # GV.OC-01
                 description = match.group("description").strip() # The organizational mission is understood and informs cybersecurity risk management
-                if not label.startswith(WITHDRAWN_PREFIX):
+                if not description.startswith(WITHDRAWN_PREFIX):
                     add_row(rows, subcategory_id, current_category_id, "Subcategory", "", description, implementation_examples, informative_references)
 
 
