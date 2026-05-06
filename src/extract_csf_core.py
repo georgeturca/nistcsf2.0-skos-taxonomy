@@ -90,9 +90,9 @@ def main():
 
             if match:
                 subcategory_id = match.group("id").strip() # GV.OC-01
-                label = match.group("description").strip() # The organizational mission is understood and informs cybersecurity risk management
+                description = match.group("description").strip() # The organizational mission is understood and informs cybersecurity risk management
                 if not label.startswith(WITHDRAWN_PREFIX):
-                    add_row(rows, subcategory_id, current_category_id, "Subcategory", label, "", implementation_examples, informative_references)
+                    add_row(rows, subcategory_id, current_category_id, "Subcategory", "", description, implementation_examples, informative_references)
 
 
     output_df = pandas.DataFrame(rows)
