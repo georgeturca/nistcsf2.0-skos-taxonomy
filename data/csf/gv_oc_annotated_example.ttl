@@ -1,0 +1,104 @@
+# Prefix for the local NIST CSF concept namespace.
+@prefix csf: <https://example.org/nist-csf-2.0/concept/> .
+# Prefix for Dublin Core terms, used here for the NIST-specific concept type.
+@prefix dcterms: <http://purl.org/dc/terms/> .
+# Prefix for RDFS, used here for external "see also" links.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+# Prefix for SKOS, the vocabulary used to model the taxonomy.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# This URI represents the whole NIST CSF 2.0 Core concept scheme.
+<https://example.org/nist-csf-2.0/scheme/core> a skos:ConceptScheme .
+# This gives the concept scheme a human-readable English label.
+<https://example.org/nist-csf-2.0/scheme/core> skos:prefLabel "NIST Cybersecurity Framework 2.0 Core"@en .
+
+# GV is represented as a SKOS concept.
+csf:GV a skos:Concept .
+# This marks GV as a NIST CSF Function.
+csf:GV dcterms:type "Function" .
+# This says GV belongs to the NIST CSF 2.0 Core concept scheme.
+csf:GV skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> .
+# This says GV is a top-level concept of the concept scheme.
+csf:GV skos:topConceptOf <https://example.org/nist-csf-2.0/scheme/core> .
+# This says the concept scheme has GV as one of its top concepts.
+<https://example.org/nist-csf-2.0/scheme/core> skos:hasTopConcept csf:GV .
+# This stores the official NIST identifier for the Function.
+csf:GV skos:notation "GV" .
+# This stores the preferred English label for the Function.
+csf:GV skos:prefLabel "GOVERN"@en .
+# This stores the English definition/description of the Function.
+csf:GV skos:definition "The organization's cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored"@en .
+# This connects the Function GV to the Category GV.OC as a narrower concept.
+csf:GV skos:narrower csf:GV-OC .
+# This stores one informative reference for GV as a scope note.
+csf:GV skos:scopeNote "ISO/IEC 27001:2022: Mandatory Clause: 6.1" .
+# This stores another informative reference for GV as a scope note.
+csf:GV skos:scopeNote "SCF: GOV-01" .
+# This provides an external web page related to one or more GV informative references.
+csf:GV rdfs:seeAlso <https://www.iso.org/standard/27001> .
+# This provides another external web page related to one or more GV informative references.
+csf:GV rdfs:seeAlso <https://scfconnect.com/controls/gov/gov-01> .
+
+# GV.OC is represented as a SKOS concept.
+csf:GV-OC a skos:Concept .
+# This marks GV.OC as a NIST CSF Category.
+csf:GV-OC dcterms:type "Category" .
+# This says GV.OC belongs to the NIST CSF 2.0 Core concept scheme.
+csf:GV-OC skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> .
+# This connects GV.OC to its broader parent Function, GV.
+csf:GV-OC skos:broader csf:GV .
+# This stores the official NIST identifier for the Category.
+csf:GV-OC skos:notation "GV.OC" .
+# This stores the preferred English label for the Category.
+csf:GV-OC skos:prefLabel "Organizational Context"@en .
+# This stores the English definition/description of the Category.
+csf:GV-OC skos:definition "The circumstances - mission, stakeholder expectations, dependencies, and legal, regulatory, and contractual requirements - surrounding the organization's cybersecurity risk management decisions are understood"@en .
+# This connects the Category GV.OC to the Subcategory GV.OC-01 as a narrower concept.
+csf:GV-OC skos:narrower csf:GV-OC-01 .
+# This stores one informative reference for GV.OC as a scope note.
+csf:GV-OC skos:scopeNote "ISO/IEC 27001:2022: Mandatory Clause: 4.2(a)" .
+# This stores another informative reference for GV.OC as a scope note.
+csf:GV-OC skos:scopeNote "NICE Framework: OG-WRL-002" .
+# This stores another informative reference for GV.OC as a scope note.
+csf:GV-OC skos:scopeNote "SCF: CPL-01" .
+# This provides an external web page related to one or more GV.OC informative references.
+csf:GV-OC rdfs:seeAlso <https://www.iso.org/standard/27001> .
+# This provides another external web page related to one or more GV.OC informative references.
+csf:GV-OC rdfs:seeAlso <https://niccs.cisa.gov/tools/nice-framework> .
+# This provides another external web page related to one or more GV.OC informative references.
+csf:GV-OC rdfs:seeAlso <https://scfconnect.com/controls/cpl/cpl-01> .
+
+# GV.OC-01 is represented as a SKOS concept.
+csf:GV-OC-01 a skos:Concept .
+# This marks GV.OC-01 as a NIST CSF Subcategory.
+csf:GV-OC-01 dcterms:type "Subcategory" .
+# This says GV.OC-01 belongs to the NIST CSF 2.0 Core concept scheme.
+csf:GV-OC-01 skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> .
+# This connects GV.OC-01 to its broader parent Category, GV.OC.
+csf:GV-OC-01 skos:broader csf:GV-OC .
+# This stores the official NIST identifier for the Subcategory.
+csf:GV-OC-01 skos:notation "GV.OC-01" .
+# This stores the preferred English label for the Subcategory.
+csf:GV-OC-01 skos:prefLabel "The organizational mission is understood and informs cybersecurity risk management"@en .
+# This stores the English definition/description of the Subcategory.
+csf:GV-OC-01 skos:definition "The organizational mission is understood and informs cybersecurity risk management"@en .
+# This stores the NIST implementation example using the SKOS example property.
+csf:GV-OC-01 skos:example "Ex1: Share the organization's mission (e.g., through vision and mission statements, marketing, and service strategies) to provide a basis for identifying risks that may impede that mission"@en .
+# This stores one informative reference for GV.OC-01 as a scope note.
+csf:GV-OC-01 skos:scopeNote "CCMv4.0: BCR-01" .
+# This stores another informative reference for GV.OC-01 as a scope note.
+csf:GV-OC-01 skos:scopeNote "ISO/IEC 27001:2022: Mandatory Clause: 4.1" .
+# This stores another informative reference for GV.OC-01 as a scope note.
+csf:GV-OC-01 skos:scopeNote "NICE Framework: OG-WRL-002" .
+# This stores another informative reference for GV.OC-01 as a scope note.
+csf:GV-OC-01 skos:scopeNote "SCF: RSK-01.1" .
+# This stores another informative reference for GV.OC-01 as a scope note.
+csf:GV-OC-01 skos:scopeNote "SCF: TDA-06.2" .
+# This provides an external page for the SCF RSK-01.1 reference.
+csf:GV-OC-01 rdfs:seeAlso <https://scfconnect.com/controls/rsk/rsk-01.1> .
+# This provides an external page for the SCF TDA-06.2 reference.
+csf:GV-OC-01 rdfs:seeAlso <https://scfconnect.com/controls/tda/tda-06.2> .
+# This provides an external page for the ISO/IEC 27001 reference.
+csf:GV-OC-01 rdfs:seeAlso <https://www.iso.org/standard/27001> .
+# This provides an external page for the NICE Framework reference.
+csf:GV-OC-01 rdfs:seeAlso <https://niccs.cisa.gov/tools/nice-framework> .
