@@ -1,0 +1,10 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?reference ?target
+WHERE {
+  ?reference skos:exactMatch ?target .
+  FILTER NOT EXISTS {
+    FILTER(STRSTARTS(STR(?target), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+  }
+}
+ORDER BY ?reference

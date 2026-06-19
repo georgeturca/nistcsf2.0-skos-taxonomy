@@ -1,0 +1,13 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?concept ?notation
+WHERE {
+  ?concept skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> ;
+           skos:notation ?notation .
+
+  FILTER NOT EXISTS {
+    ?concept skos:prefLabel ?label .
+    FILTER(lang(?label) = "en")
+  }
+}
+ORDER BY ?notation

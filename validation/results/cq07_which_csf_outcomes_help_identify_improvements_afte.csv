@@ -1,0 +1,5 @@
+notation,label,definition
+ID.IM-01,ID.IM-01,Improvements are identified from evaluations
+ID.IM-02,ID.IM-02,"Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties"
+ID.IM-03,ID.IM-03,"Improvements are identified from execution of operational processes, procedures, and activities"
+ID.IM-04,ID.IM-04,"Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved"

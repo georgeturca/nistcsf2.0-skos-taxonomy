@@ -1,0 +1,11 @@
+notation,label,definition
+ID.RA-01,ID.RA-01,"Vulnerabilities in assets are identified, validated, and recorded"
+ID.RA-02,ID.RA-02,Cyber threat intelligence is received from information sharing forums and sources
+ID.RA-03,ID.RA-03,Internal and external threats to the organization are identified and recorded
+ID.RA-04,ID.RA-04,Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded
+ID.RA-05,ID.RA-05,"Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization"
+ID.RA-06,ID.RA-06,"Risk responses are chosen, prioritized, planned, tracked, and communicated"
+ID.RA-07,ID.RA-07,"Changes and exceptions are managed, assessed for risk impact, recorded, and tracked"
+ID.RA-08,ID.RA-08,"Processes for receiving, analyzing, and responding to vulnerability disclosures are established"
+ID.RA-09,ID.RA-09,The authenticity and integrity of hardware and software are assessed prior to acquisition and use
+ID.RA-10,ID.RA-10,Critical suppliers are assessed prior to acquisition

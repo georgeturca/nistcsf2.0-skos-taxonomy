@@ -1,0 +1,5 @@
+notation,label,definition
+PR.DS-01,PR.DS-01,"The confidentiality, integrity, and availability of data-at-rest are protected"
+PR.DS-02,PR.DS-02,"The confidentiality, integrity, and availability of data-in-transit are protected"
+PR.DS-10,PR.DS-10,"The confidentiality, integrity, and availability of data-in-use are protected"
+PR.DS-11,PR.DS-11,"Backups of data are created, protected, maintained, and tested"

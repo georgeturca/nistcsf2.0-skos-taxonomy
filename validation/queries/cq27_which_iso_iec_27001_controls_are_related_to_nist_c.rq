@@ -1,0 +1,27 @@
+PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
+PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?nistNotation ?nistLabel ?referenceNotation ?referenceLabel ?referenceURL ?isoConcept ?isoLabel
+WHERE {
+  VALUES ?concept { csf:PR-AA-01 csf:PR-AA-02 csf:PR-AA-03 csf:PR-AA-04 csf:PR-AA-05 csf:PR-AA-06 }
+  ?concept skos:notation ?nistNotation ;
+           skos:prefLabel ?nistLabel ;
+           dcterms:references ?reference .
+  FILTER(LANGMATCHES(LANG(?nistLabel), "en"))
+
+  ?reference skos:notation ?referenceNotation ;
+             skos:prefLabel ?referenceLabel ;
+             skos:exactMatch ?isoConcept .
+  FILTER(LANGMATCHES(LANG(?referenceLabel), "en"))
+  FILTER(STRSTARTS(STR(?isoConcept), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+
+  OPTIONAL { ?reference rdfs:seeAlso ?referenceURL . }
+  OPTIONAL {
+    ?isoConcept skos:prefLabel ?isoLabel .
+    FILTER(LANG(?isoLabel) = "" || LANGMATCHES(LANG(?isoLabel), "en"))
+  }
+}
+ORDER BY ?nistNotation ?referenceNotation

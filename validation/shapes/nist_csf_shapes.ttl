@@ -1,0 +1,307 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Core NIST CSF concepts
+#################################################################
+
+<#CoreConceptShape>
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?this
+            WHERE {
+              ?this skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> .
+            }
+        """ ;
+    ] ;
+
+    sh:property [
+        sh:path skos:notation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every core concept must have exactly one skos:notation." ;
+    ] ;
+
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <https://example.org/nist-csf-2.0/scheme/core> ;
+        sh:message "Every core concept must belong to the NIST CSF core scheme." ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Every core concept must have at least one English skos:prefLabel." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS {
+                $this skos:prefLabel ?label .
+                FILTER(lang(?label) = "en")
+              }
+            }
+        """ ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Every core concept must have at least one English skos:definition." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this
+            WHERE {
+              FILTER NOT EXISTS {
+                $this skos:definition ?definition .
+                FILTER(lang(?definition) = "en")
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Functions
+#################################################################
+
+<#FunctionShape>
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this dcterms:type "Function" .
+            }
+        """ ;
+    ] ;
+
+    sh:property [
+        sh:path skos:topConceptOf ;
+        sh:hasValue <https://example.org/nist-csf-2.0/scheme/core> ;
+        sh:message "Every Function must be a top concept of the core scheme." ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Functions must not have a broader concept." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?this
+            WHERE {
+              ?this skos:broader ?parent .
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Categories
+#################################################################
+
+<#CategoryShape>
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this dcterms:type "Category" .
+            }
+        """ ;
+    ] ;
+
+    sh:property [
+        sh:path skos:broader ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every Category must have exactly one broader Function." ;
+    ] ;
+
+    sh:sparql [
+        sh:message "The broader concept of a Category must be a Function." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this skos:broader ?parent .
+              FILTER NOT EXISTS {
+                ?parent dcterms:type "Function" .
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Subcategories
+#################################################################
+
+<#SubcategoryShape>
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this dcterms:type "Subcategory" .
+            }
+        """ ;
+    ] ;
+
+    sh:property [
+        sh:path skos:broader ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every Subcategory must have exactly one broader Category." ;
+    ] ;
+
+    sh:sparql [
+        sh:message "The broader concept of a Subcategory must be a Category." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this skos:broader ?parent .
+              FILTER NOT EXISTS {
+                ?parent dcterms:type "Category" .
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Broader / narrower consistency
+#################################################################
+
+<#BroaderNarrowerConsistencyShape>
+    a sh:NodeShape ;
+    sh:targetSubjectsOf skos:broader ;
+
+    sh:sparql [
+        sh:message "Every skos:broader relation must have a matching inverse skos:narrower relation." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?this ?parent
+            WHERE {
+              ?this skos:broader ?parent .
+              FILTER NOT EXISTS {
+                ?parent skos:narrower ?this .
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# No hierarchy cycles
+#################################################################
+
+<#NoBroaderCyclesShape>
+    a sh:NodeShape ;
+    sh:targetSubjectsOf skos:broader ;
+
+    sh:sparql [
+        sh:message "The skos:broader hierarchy must not contain cycles." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?this
+            WHERE {
+              ?this skos:broader+ ?this .
+            }
+        """ ;
+    ] .
+
+#################################################################
+# Informative references
+#################################################################
+
+<#InformativeReferenceShape>
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this dcterms:type "InformativeReference" .
+            }
+        """ ;
+    ] ;
+
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:message "Every informative reference must have a label." ;
+    ] ;
+
+    sh:property [
+        sh:path skos:notation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every informative reference must have exactly one notation." ;
+    ] ;
+
+    sh:sparql [
+        sh:message "Every informative reference must be referenced by at least one NIST concept using dcterms:references." ;
+        sh:select """
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this
+            WHERE {
+              ?this dcterms:type "InformativeReference" .
+              FILTER NOT EXISTS {
+                ?concept dcterms:references ?this .
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# skos:related symmetry
+#################################################################
+
+<#RelatedSymmetryShape>
+    a sh:NodeShape ;
+    sh:targetSubjectsOf skos:related ;
+
+    sh:sparql [
+        sh:message "Every skos:related relation must be symmetric." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT ?this ?related
+            WHERE {
+              ?this skos:related ?related .
+              FILTER NOT EXISTS {
+                ?related skos:related ?this .
+              }
+            }
+        """ ;
+    ] .
+
+#################################################################
+# ISO exactMatch mapping
+#################################################################
+
+<#IsoExactMatchShape>
+    a sh:NodeShape ;
+    sh:targetSubjectsOf skos:exactMatch ;
+
+    sh:sparql [
+        sh:message "Only informative reference concepts should have skos:exactMatch links to Ion's ISO taxonomy." ;
+        sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT ?this ?iso
+            WHERE {
+              ?this skos:exactMatch ?iso .
+
+              FILTER NOT EXISTS {
+                ?this dcterms:type "InformativeReference" .
+              }
+
+              FILTER(STRSTARTS(STR(?iso), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+            }
+        """ ;
+    ] .

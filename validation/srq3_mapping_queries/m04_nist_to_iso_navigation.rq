@@ -1,0 +1,17 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?nistConcept ?nistNotation ?nistLabel ?reference ?referenceNotation ?isoConcept
+WHERE {
+  ?nistConcept dcterms:references ?reference ;
+               skos:notation ?nistNotation ;
+               skos:prefLabel ?nistLabel .
+
+  ?reference skos:notation ?referenceNotation ;
+             skos:exactMatch ?isoConcept .
+
+  FILTER(lang(?nistLabel) = "en")
+  FILTER(STRSTARTS(STR(?isoConcept), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+}
+ORDER BY ?nistNotation ?referenceNotation
+LIMIT 50

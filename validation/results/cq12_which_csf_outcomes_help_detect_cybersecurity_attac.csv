@@ -1,0 +1,6 @@
+notation,label,definition
+DE.CM-01,DE.CM-01,Networks and network services are monitored to find potentially adverse events
+DE.CM-02,DE.CM-02,The physical environment is monitored to find potentially adverse events
+DE.CM-03,DE.CM-03,Personnel activity and technology usage are monitored to find potentially adverse events
+DE.CM-06,DE.CM-06,External service provider activities and services are monitored to find potentially adverse events
+DE.CM-09,DE.CM-09,"Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"

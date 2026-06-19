@@ -1,0 +1,10 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?scheme ?notation (COUNT(?concept) AS ?count)
+WHERE {
+  ?concept skos:inScheme ?scheme ;
+           skos:notation ?notation .
+}
+GROUP BY ?scheme ?notation
+HAVING(COUNT(?concept) > 1)
+ORDER BY ?scheme ?notation

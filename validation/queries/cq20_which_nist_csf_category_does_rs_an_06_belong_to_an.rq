@@ -1,0 +1,20 @@
+PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
+PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?subcategoryNotation ?subcategoryLabel ?subcategoryDefinition ?categoryNotation ?categoryLabel ?categoryDefinition
+WHERE {
+  csf:RS-AN-06 skos:notation ?subcategoryNotation ;
+              skos:prefLabel ?subcategoryLabel ;
+              skos:definition ?subcategoryDefinition ;
+              skos:broader ?category .
+  ?category skos:notation ?categoryNotation ;
+            skos:prefLabel ?categoryLabel ;
+            skos:definition ?categoryDefinition .
+  FILTER(LANGMATCHES(LANG(?subcategoryLabel), "en"))
+  FILTER(LANGMATCHES(LANG(?subcategoryDefinition), "en"))
+  FILTER(LANGMATCHES(LANG(?categoryLabel), "en"))
+  FILTER(LANGMATCHES(LANG(?categoryDefinition), "en"))
+}

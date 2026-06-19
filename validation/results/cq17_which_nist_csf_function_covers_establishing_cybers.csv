@@ -1,0 +1,3 @@
+functionNotation,functionLabel,functionDefinition,categoryNotation,categoryLabel,categoryDefinition
+GV,GOVERN,"The organization's cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored",GV.OV,Oversight,"Results of organization-wide cybersecurity risk management activities and performance are used to inform, improve, and adjust the risk management strategy"
+GV,GOVERN,"The organization's cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored",GV.PO,Policy,"Organizational cybersecurity policy is established, communicated, and enforced"

@@ -1,0 +1,7 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT (COUNT(*) AS ?isoMappingCount)
+WHERE {
+  ?reference skos:exactMatch ?isoConcept .
+  FILTER(STRSTARTS(STR(?isoConcept), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+}

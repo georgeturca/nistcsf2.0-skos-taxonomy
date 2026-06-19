@@ -1,0 +1,10 @@
+notation,label,definition
+DE.CM-09,DE.CM-09,"Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
+ID.AM-01,ID.AM-01,Inventories of hardware managed by the organization are maintained
+ID.AM-02,ID.AM-02,"Inventories of software, services, and systems managed by the organization are maintained"
+ID.IM-03,ID.IM-03,"Improvements are identified from execution of operational processes, procedures, and activities"
+ID.RA-01,ID.RA-01,"Vulnerabilities in assets are identified, validated, and recorded"
+ID.RA-05,ID.RA-05,"Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization"
+ID.RA-06,ID.RA-06,"Risk responses are chosen, prioritized, planned, tracked, and communicated"
+PR.PS-02,PR.PS-02,"Software is maintained, replaced, and removed commensurate with risk"
+RS.MI-01,RS.MI-01,Incidents are contained

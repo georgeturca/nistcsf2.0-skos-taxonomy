@@ -1,0 +1,28 @@
+PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
+PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?notation ?label ?definition ?referenceNotation ?referenceLabel ?isoConcept ?isoLabel
+WHERE {
+  ?concept skos:notation ?notation ;
+           skos:prefLabel ?label ;
+           skos:definition ?definition ;
+           dcterms:references ?reference .
+  FILTER(LANGMATCHES(LANG(?label), "en"))
+  FILTER(LANGMATCHES(LANG(?definition), "en"))
+
+  ?reference skos:notation ?referenceNotation ;
+             skos:prefLabel ?referenceLabel ;
+             skos:exactMatch <https://wiren301.github.io/iso27001-skos-taxonomy/27001/control/A.8.13> .
+  FILTER(LANGMATCHES(LANG(?referenceLabel), "en"))
+
+  BIND(<https://wiren301.github.io/iso27001-skos-taxonomy/27001/control/A.8.13> AS ?isoConcept)
+
+  OPTIONAL {
+    ?isoConcept skos:prefLabel ?isoLabel .
+    FILTER(LANG(?isoLabel) = "" || LANGMATCHES(LANG(?isoLabel), "en"))
+  }
+}
+ORDER BY ?notation

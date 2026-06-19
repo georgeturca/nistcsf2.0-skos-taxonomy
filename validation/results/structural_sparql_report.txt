@@ -1,0 +1,27 @@
+Structural validation query results
+========================================
+
+Check: missing_english_labels.rq
+Description: Every core concept has an English skos:prefLabel
+Expected: 0 rows
+Actual rows: 0
+Status: PASS
+
+Check: duplicate_notations.rq
+Description: No duplicate skos:notation values exist within the same scheme
+Expected: 0 rows
+Actual rows: 0
+Status: PASS
+
+Check: reference_counts.rq
+Description: Reference model contains dcterms:references, informative reference concepts, and ISO exactMatch links
+Expected: All counts greater than 0
+Actual rows: 3
+Status: PASS
+Results:
+  dcterms:references triples | 6332
+  informative reference concepts | 2015
+  skos:exactMatch triples | 90
+
+========================================
+Overall status: PASS

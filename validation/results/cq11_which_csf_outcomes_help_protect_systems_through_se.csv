@@ -1,0 +1,13 @@
+notation,label,definition
+PR.IR,Technology Infrastructure Resilience,"Security architectures are managed with the organization's risk strategy to protect asset confidentiality, integrity, and availability, and organizational resilience"
+PR.IR-01,PR.IR-01,Networks and environments are protected from unauthorized logical access and usage
+PR.IR-02,PR.IR-02,The organization's technology assets are protected from environmental threats
+PR.IR-03,PR.IR-03,Mechanisms are implemented to achieve resilience requirements in normal and adverse situations
+PR.IR-04,PR.IR-04,Adequate resource capacity to ensure availability is maintained
+PR.PS,Platform Security,"The hardware, software (e.g., firmware, operating systems, applications), and services of physical and virtual platforms are managed consistent with the organization's risk strategy to protect their confidentiality, integrity, and availability"
+PR.PS-01,PR.PS-01,Configuration management practices are established and applied
+PR.PS-02,PR.PS-02,"Software is maintained, replaced, and removed commensurate with risk"
+PR.PS-03,PR.PS-03,"Hardware is maintained, replaced, and removed commensurate with risk"
+PR.PS-04,PR.PS-04,Log records are generated and made available for continuous monitoring
+PR.PS-05,PR.PS-05,Installation and execution of unauthorized software are prevented
+PR.PS-06,PR.PS-06,"Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle"

@@ -1,0 +1,24 @@
+PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
+PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?notation ?label ?definition ?referenceNotation ?referenceLabel ?referenceURL ?isoConcept
+WHERE {
+  VALUES ?concept { csf:ID-AM-05 csf:PR-DS-11 csf:PR-PS-01 csf:PR-PS-04 csf:PR-IR-03 csf:DE-CM-09 csf:RS-MA-01 csf:RS-MI-01 csf:RS-MI-02 csf:RC-RP-01 csf:RC-RP-03 csf:RC-CO-03 }
+  ?concept skos:notation ?notation ;
+           skos:prefLabel ?label ;
+           skos:definition ?definition ;
+           dcterms:references ?reference .
+  FILTER(LANGMATCHES(LANG(?label), "en"))
+  FILTER(LANGMATCHES(LANG(?definition), "en"))
+
+  ?reference skos:notation ?referenceNotation ;
+             skos:prefLabel ?referenceLabel .
+  FILTER(LANGMATCHES(LANG(?referenceLabel), "en"))
+
+  OPTIONAL { ?reference rdfs:seeAlso ?referenceURL . }
+  OPTIONAL { ?reference skos:exactMatch ?isoConcept . }
+}
+ORDER BY ?notation ?referenceNotation

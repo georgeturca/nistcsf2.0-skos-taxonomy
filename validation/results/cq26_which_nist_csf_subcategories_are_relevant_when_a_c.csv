@@ -1,0 +1,11 @@
+notation,label,definition
+DE.AE-04,DE.AE-04,The estimated impact and scope of adverse events are understood
+DE.AE-08,DE.AE-08,Incidents are declared when adverse events meet the defined incident criteria
+DE.CM-09,DE.CM-09,"Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
+ID.AM-04,ID.AM-04,Inventories of services provided by suppliers are maintained
+ID.AM-07,ID.AM-07,Inventories of data and corresponding metadata for designated data types are maintained
+PR.AA-05,PR.AA-05,"Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
+PR.DS-01,PR.DS-01,"The confidentiality, integrity, and availability of data-at-rest are protected"
+PR.DS-02,PR.DS-02,"The confidentiality, integrity, and availability of data-in-transit are protected"
+RS.CO-02,RS.CO-02,Internal and external stakeholders are notified of incidents
+RS.MI-01,RS.MI-01,Incidents are contained

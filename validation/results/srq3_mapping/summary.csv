@@ -1,0 +1,6 @@
+check,description,expected,actual,status,result_file
+m01_iso_mapping_count.rq,ISO mappings are present,Mapping count greater than 0,90,PASS,validation/results/srq3_mapping/m01_iso_mapping_count.csv
+m02_invalid_iso_targets.rq,All ISO mappings point to Ion's ISO taxonomy namespace,0 rows,0 rows,PASS,validation/results/srq3_mapping/m02_invalid_iso_targets.csv
+m03_invalid_mapping_subjects.rq,All ISO mappings start from informative reference concepts,0 rows,0 rows,PASS,validation/results/srq3_mapping/m03_invalid_mapping_subjects.csv
+m04_nist_to_iso_navigation.rq,NIST concepts can be navigated to ISO concepts,Rows returned,50 rows,PASS,validation/results/srq3_mapping/m04_nist_to_iso_navigation.csv
+m05_iso_to_nist_navigation.rq,ISO concepts can be navigated back to NIST concepts,Rows returned,50 rows,PASS,validation/results/srq3_mapping/m05_iso_to_nist_navigation.csv

@@ -1,0 +1,13 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?subject ?isoConcept
+WHERE {
+  ?subject skos:exactMatch ?isoConcept .
+  FILTER(STRSTARTS(STR(?isoConcept), "https://wiren301.github.io/iso27001-skos-taxonomy/"))
+
+  FILTER NOT EXISTS {
+    ?subject dcterms:type "InformativeReference" .
+  }
+}
+ORDER BY ?subject

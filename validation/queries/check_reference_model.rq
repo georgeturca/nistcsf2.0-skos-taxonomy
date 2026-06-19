@@ -1,0 +1,24 @@
+PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
+PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?check ?count
+WHERE {
+  {
+    SELECT ("dcterms:references triples" AS ?check) (COUNT(*) AS ?count)
+    WHERE { ?s dcterms:references ?o . }
+  }
+  UNION
+  {
+    SELECT ("skos:exactMatch triples" AS ?check) (COUNT(*) AS ?count)
+    WHERE { ?s skos:exactMatch ?o . }
+  }
+  UNION
+  {
+    SELECT ("CSF core concepts" AS ?check) (COUNT(*) AS ?count)
+    WHERE { ?s skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> . }
+  }
+}
+ORDER BY ?check

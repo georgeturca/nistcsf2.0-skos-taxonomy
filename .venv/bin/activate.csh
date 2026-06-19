@@ -9,7 +9,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /home/george/Media/Universitate/MOD12/nistcsf2.0-skos-taxonomy/.venv
+setenv VIRTUAL_ENV /home/george/Media/University/MOD12/nistcsf2.0-skos-taxonomy/.venv
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"

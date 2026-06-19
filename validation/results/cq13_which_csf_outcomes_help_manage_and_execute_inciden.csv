@@ -1,0 +1,6 @@
+notation,label,definition
+RS.MA-01,RS.MA-01,The incident response plan is executed in coordination with relevant third parties once an incident is declared
+RS.MA-02,RS.MA-02,Incident reports are triaged and validated
+RS.MA-03,RS.MA-03,Incidents are categorized and prioritized
+RS.MA-04,RS.MA-04,Incidents are escalated or elevated as needed
+RS.MA-05,RS.MA-05,The criteria for initiating incident recovery are applied

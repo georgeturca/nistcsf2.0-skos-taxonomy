@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/george/Media/Universitate/MOD12/nistcsf2.0-skos-taxonomy/.venv
+set -gx VIRTUAL_ENV /home/george/Media/University/MOD12/nistcsf2.0-skos-taxonomy/.venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
