@@ -1,6 +1,0 @@
-#!/home/george/Media/University/MOD12/nistcsf2.0-skos-taxonomy/.venv/bin/python
-import sys
-from rdflib.tools.graphisomorphism import main
-if __name__ == '__main__':
-    sys.argv[0] = sys.argv[0].removesuffix('.exe')
-    sys.exit(main())

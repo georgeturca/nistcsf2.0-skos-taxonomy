@@ -14,8 +14,8 @@ All queries use the NIST CSF 2.0 SKOS model with `skos:broader`, `skos:notation`
 **Validates:** Category traversal: GV.OC subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -42,8 +42,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: GV.RM subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -70,8 +70,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: GV.RR subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -98,8 +98,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: GV.SC subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -126,8 +126,8 @@ ORDER BY ?notation
 **Validates:** Selected asset-management outcomes from ID.AM
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -154,8 +154,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: ID.RA subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -182,8 +182,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: ID.IM subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -210,8 +210,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: PR.AA subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -238,8 +238,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: PR.AT subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -266,8 +266,8 @@ ORDER BY ?notation
 **Validates:** Selected data-security outcomes from PR.DS
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -294,8 +294,8 @@ ORDER BY ?notation
 **Validates:** Selected platform-security and infrastructure-resilience outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -322,8 +322,8 @@ ORDER BY ?notation
 **Validates:** Selected continuous monitoring outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -350,8 +350,8 @@ ORDER BY ?notation
 **Validates:** Category traversal: RS.MA subcategories
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -378,8 +378,8 @@ ORDER BY ?notation
 **Validates:** Selected incident communication outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -406,8 +406,8 @@ ORDER BY ?notation
 **Validates:** Selected incident mitigation outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -434,8 +434,8 @@ ORDER BY ?notation
 **Validates:** Selected recovery communication outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -462,8 +462,8 @@ ORDER BY ?notation
 **Validates:** Function and category retrieval for GOVERN, Policy, and Oversight
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -497,8 +497,8 @@ ORDER BY ?categoryNotation
 **Validates:** Single category definition retrieval
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -523,8 +523,8 @@ WHERE {
 **Validates:** Single subcategory definition retrieval
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -549,8 +549,8 @@ WHERE {
 **Validates:** Upward hierarchy navigation and definition retrieval
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -581,8 +581,8 @@ WHERE {
 **Validates:** Scenario outcome retrieval with informative references
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -617,8 +617,8 @@ ORDER BY ?notation ?referenceNotation
 **Validates:** Scenario outcome retrieval with informative references
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -653,8 +653,8 @@ ORDER BY ?notation ?referenceNotation
 **Validates:** Scenario outcome retrieval with informative references
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -689,8 +689,8 @@ ORDER BY ?notation ?referenceNotation
 **Validates:** Scenario outcome retrieval with informative references
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -725,8 +725,8 @@ ORDER BY ?notation ?referenceNotation
 **Validates:** Scenario outcome retrieval by selected notations
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -753,8 +753,8 @@ ORDER BY ?notation
 **Validates:** Scenario outcome retrieval by selected notations
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -781,8 +781,8 @@ ORDER BY ?notation
 **Validates:** Cross-standard tracing from PR.AA outcomes to ISO taxonomy through dcterms:references and skos:exactMatch
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -820,8 +820,8 @@ ORDER BY ?nistNotation ?referenceNotation
 **Validates:** Cross-standard tracing from PR.PS-04 to ISO taxonomy
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -859,8 +859,8 @@ ORDER BY ?nistNotation ?referenceNotation
 **Validates:** Reverse cross-standard tracing from ISO A.8.13 to NIST concepts
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -899,8 +899,8 @@ ORDER BY ?notation
 **Validates:** Selected responsibility/accountability outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -927,8 +927,8 @@ ORDER BY ?notation
 **Validates:** Selected identity, credential, access, and monitoring outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -955,8 +955,8 @@ ORDER BY ?notation
 **Validates:** Selected backup and restoration outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -983,8 +983,8 @@ ORDER BY ?notation
 **Validates:** Selected supplier-monitoring outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1011,8 +1011,8 @@ ORDER BY ?notation
 **Validates:** Selected incident declaration, triage, prioritization, and escalation outcomes
 
 ```sparql
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

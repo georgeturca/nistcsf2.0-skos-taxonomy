@@ -1,5 +1,5 @@
-PREFIX csf: <https://example.org/nist-csf-2.0/concept/>
-PREFIX csfref: <https://example.org/nist-csf-2.0/reference/>
+PREFIX csf: <https://w3id.org/nist-csf2-skos/concept/>
+PREFIX csfref: <https://w3id.org/nist-csf2-skos/reference/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -18,7 +18,7 @@ WHERE {
   UNION
   {
     SELECT ("CSF core concepts" AS ?check) (COUNT(*) AS ?count)
-    WHERE { ?s skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> . }
+    WHERE { ?s skos:inScheme <https://w3id.org/nist-csf2-skos/scheme/core> . }
   }
 }
 ORDER BY ?check

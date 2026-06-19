@@ -12,7 +12,7 @@ NIST_FILE = Path("output/nist_csf2_taxonomy.ttl")
 ISO_FILE = Path("data/iso-security.ttl")
 OUTPUT_FILE = Path("website/index.html")
 
-NIST_CORE_SCHEME = "https://example.org/nist-csf-2.0/scheme/core"
+NIST_CORE_SCHEME = "https://w3id.org/nist-csf2-skos/scheme/core"
 
 
 def literal_values(graph, subject, predicate):
@@ -53,8 +53,8 @@ def pick_literal(values):
 
 def short_uri(uri):
     replacements = {
-        "https://example.org/nist-csf-2.0/concept/": "csf:",
-        "https://example.org/nist-csf-2.0/reference/": "csfref:",
+        "https://w3id.org/nist-csf2-skos/concept/": "csf:",
+        "https://w3id.org/nist-csf2-skos/reference/": "csfref:",
         "https://wiren301.github.io/iso27001-skos-taxonomy/27001/clause/": "iso27001-clause:",
         "https://wiren301.github.io/iso27001-skos-taxonomy/27001/control/": "iso27001-control:",
         "https://wiren301.github.io/iso27001-skos-taxonomy/27002/control/": "iso27002-control:",
@@ -69,10 +69,10 @@ def short_uri(uri):
 
 
 def vocabulary_name(uri):
-    if uri.startswith("https://example.org/nist-csf-2.0/concept/"):
+    if uri.startswith("https://w3id.org/nist-csf2-skos/concept/"):
         return "NIST CSF Core"
 
-    if uri.startswith("https://example.org/nist-csf-2.0/reference/"):
+    if uri.startswith("https://w3id.org/nist-csf2-skos/reference/"):
         return "NIST Informative References"
 
     if "iso27001-skos-taxonomy/27001/clause/" in uri:

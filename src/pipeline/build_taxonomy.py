@@ -14,9 +14,12 @@ OUTPUT_FILE = Path("output/nist_csf2_taxonomy.ttl")
 ISO_FILE = Path("data/iso-security.ttl")
 
 #URI prefixes
-BASE = Namespace("https://example.org/nist-csf-2.0/")
-CSF = Namespace("https://example.org/nist-csf-2.0/concept/")
-CSFREF = Namespace("https://example.org/nist-csf-2.0/reference/")
+# BASE = Namespace("https://w3id.org/nist-csf2-skos/")
+# CSF = Namespace("https://w3id.org/nist-csf2-skos/concept/")
+# CSFREF = Namespace("https://w3id.org/nist-csf2-skos/reference/")
+BASE = Namespace("https://w3id.org/nist-csf2-skos/")
+CSF = Namespace("https://w3id.org/nist-csf2-skos/concept/")
+CSFREF = Namespace("https://w3id.org/nist-csf2-skos/reference/")
 
 
 
@@ -187,7 +190,7 @@ def add_informative_references(graph, concept_uri, informative_references, refer
         graph.add((reference_uri, SKOS.prefLabel, Literal(label, lang="en")))
         
         if not list(graph.objects(reference_uri, SKOS.notation)):
-        graph.add((reference_uri, SKOS.notation, Literal(reference)))
+            graph.add((reference_uri, SKOS.notation, Literal(reference)))
 
         # Main semantic relation: the NIST CSF concept references this informative reference.
         graph.add((concept_uri, DCTERMS.references, reference_uri))

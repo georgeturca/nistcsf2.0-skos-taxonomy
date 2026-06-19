@@ -2,7 +2,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT ?concept ?notation
 WHERE {
-  ?concept skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> ;
+  ?concept skos:inScheme <https://w3id.org/nist-csf2-skos/scheme/core> ;
            skos:notation ?notation .
 
   FILTER NOT EXISTS {

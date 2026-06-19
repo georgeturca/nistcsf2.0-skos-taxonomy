@@ -15,7 +15,7 @@
             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             SELECT ?this
             WHERE {
-              ?this skos:inScheme <https://example.org/nist-csf-2.0/scheme/core> .
+              ?this skos:inScheme <https://w3id.org/nist-csf2-skos/scheme/core> .
             }
         """ ;
     ] ;
@@ -29,7 +29,7 @@
 
     sh:property [
         sh:path skos:inScheme ;
-        sh:hasValue <https://example.org/nist-csf-2.0/scheme/core> ;
+        sh:hasValue <https://w3id.org/nist-csf2-skos/scheme/core> ;
         sh:message "Every core concept must belong to the NIST CSF core scheme." ;
     ] ;
 
@@ -80,7 +80,7 @@
 
     sh:property [
         sh:path skos:topConceptOf ;
-        sh:hasValue <https://example.org/nist-csf-2.0/scheme/core> ;
+        sh:hasValue <https://w3id.org/nist-csf2-skos/scheme/core> ;
         sh:message "Every Function must be a top concept of the core scheme." ;
     ] ;
 
