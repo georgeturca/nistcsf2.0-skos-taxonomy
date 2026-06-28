@@ -20,6 +20,10 @@ ISO_FILE = Path("data/iso-security.ttl")
 BASE = Namespace("https://w3id.org/nist-csf2-skos/")
 CSF = Namespace("https://w3id.org/nist-csf2-skos/concept/")
 CSFREF = Namespace("https://w3id.org/nist-csf2-skos/reference/")
+ISO27001_CLAUSE = Namespace("https://wiren301.github.io/iso27001-skos-taxonomy/27001/clause/")
+ISO27001_CONTROL = Namespace("https://wiren301.github.io/iso27001-skos-taxonomy/27001/control/")
+ISO27002_CONTROL = Namespace("https://wiren301.github.io/iso27001-skos-taxonomy/27002/control/")
+ISO27000_TERM = Namespace("https://wiren301.github.io/iso27001-skos-taxonomy/27000/term/")
 
 
 
@@ -257,6 +261,10 @@ def main():
     graph.bind("rdfs", RDFS)
     graph.bind("csf", CSF)
     graph.bind("csfref", CSFREF)
+    graph.bind("iso27001clause", ISO27001_CLAUSE)
+    graph.bind("iso27001control", ISO27001_CONTROL)
+    graph.bind("iso27002control", ISO27002_CONTROL)
+    graph.bind("iso27000term", ISO27000_TERM)
 
     scheme = BASE["scheme/core"]
 
