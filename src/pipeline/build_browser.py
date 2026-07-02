@@ -236,7 +236,8 @@ def main():
         }}
 
         .top-controls select,
-        .top-controls button {{
+        .top-controls button,
+        .top-controls a.nav-button {{
             width: auto;
             margin: 0;
             padding: 7px 9px;
@@ -247,8 +248,89 @@ def main():
             font-size: 13px;
         }}
 
-        .top-controls button {{
+        .top-controls button,
+        .top-controls a.nav-button {{
             cursor: pointer;
+        }}
+
+        .top-controls a.nav-button {{
+            display: inline-block;
+            text-decoration: none;
+        }}
+
+        .top-controls a.nav-button:hover,
+        .top-controls button:hover {{
+            background: #e5e7eb;
+            text-decoration: none;
+        }}
+
+        .modal-backdrop {{
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 1000;
+        }}
+
+        .modal-content {{
+            width: min(720px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            color: #111827;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            padding: 24px;
+            position: relative;
+            line-height: 1.5;
+        }}
+
+        .modal-content h2 {{
+            margin-top: 0;
+            margin-right: 34px;
+        }}
+
+        .modal-content h3 {{
+            margin-bottom: 6px;
+        }}
+
+        .modal-close {{
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            border: none;
+            background: #f3f4f6;
+            color: #111827;
+            border-radius: 999px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }}
+
+        .modal-actions {{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }}
+
+        .modal-actions a {{
+            display: inline-block;
+            padding: 9px 12px;
+            border-radius: 6px;
+            background: #1f2937;
+            color: white;
+            text-decoration: none;
+        }}
+
+        .modal-actions a.secondary {{
+            background: #e5e7eb;
+            color: #111827;
         }}
 
         .layout {{
@@ -566,6 +648,9 @@ def main():
             <option value="graph">Graph</option>
         </select>
 
+        <button type="button" onclick="openThesisInfo()">About thesis</button>
+        <a class="nav-button" href="https://github.com/georgeturca/nistcsf2.0-skos-taxonomy" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+
         <span id="graphTopControls" class="top-controls hidden">
             <label for="graphType">Graph</label>
             <select id="graphType" onchange="renderDetails()">
@@ -590,6 +675,28 @@ def main():
         </span>
     </div>
 </header>
+
+<div id="thesisInfoModal" class="modal-backdrop hidden" onclick="handleModalBackdropClick(event)">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="thesisInfoTitle">
+        <button class="modal-close" type="button" onclick="closeThesisInfo()" aria-label="Close thesis information">×</button>
+        <h2 id="thesisInfoTitle">About this thesis</h2>
+        <p><strong>Creating a Machine-Readable SKOS Taxonomy of the NIST Cybersecurity Framework 2.0</strong></p>
+        <p>This browser is a supporting artifact for exploring the generated NIST CSF 2.0 SKOS taxonomy and its links to the existing ISO/IEC 27001 SKOS taxonomy.</p>
+        <h3>What the browser shows</h3>
+        <ul>
+            <li>NIST CSF 2.0 Functions, Categories, and Subcategories</li>
+            <li>labels, definitions, implementation examples, and Informative References</li>
+            <li>links from NIST CSF concepts to related ISO/IEC 27001 concepts</li>
+            <li>information and graph views for exploring the taxonomy</li>
+        </ul>
+        <h3>Repository</h3>
+        <p>The source code, generated taxonomy files, validation queries, validation results, and browser implementation are available on GitHub.</p>
+        <div class="modal-actions">
+            <a href="https://github.com/georgeturca/nistcsf2.0-skos-taxonomy" target="_blank" rel="noopener noreferrer">Open GitHub repository</a>
+            <a class="secondary" href="https://w3id.org/nist-csf2-skos/" target="_blank" rel="noopener noreferrer">Open W3ID namespace</a>
+        </div>
+    </div>
+</div>
 
 <div class="layout">
     <aside>
@@ -624,6 +731,26 @@ let currentLanguage = "en";
 let currentViewMode = "info";
 let graphTransform = { x: 0, y: 0, scale: 1 };
 let graphDrag = null;
+
+function openThesisInfo() {{
+    document.getElementById("thesisInfoModal").classList.remove("hidden");
+}}
+
+function closeThesisInfo() {{
+    document.getElementById("thesisInfoModal").classList.add("hidden");
+}}
+
+function handleModalBackdropClick(event) {{
+    if (event.target.id === "thesisInfoModal") {{
+        closeThesisInfo();
+    }}
+}}
+
+document.addEventListener("keydown", function(event) {{
+    if (event.key === "Escape") {{
+        closeThesisInfo();
+    }}
+}});
 
 function escapeHtml(value) {{
     return String(value || "")
